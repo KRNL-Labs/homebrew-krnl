@@ -15,7 +15,7 @@ class KrnlCli < Formula
   
   def install
     # Install dependencies
-    system "npm", "ci"
+    system "npm", "install"
     
     # Build the project
     system "npm", "run", "build"
