@@ -14,8 +14,9 @@ class KrnlCli < Formula
   depends_on "node@18"
 
   def install
-    # Skip npm install and build steps - use pre-built package
-
+    # Install dependencies and build the project
+    system "npm", "install", "--omit=dev"
+    
     # Install to libexec
     libexec.install Dir["*"]
 
@@ -28,7 +29,18 @@ class KrnlCli < Formula
     # Make bin stub executable
     chmod 0755, bin/"krnl"
 
-    # Note about Foundry requirement
+    # Install Foundry if not already installed
+    foundry_bin = "#{ENV["HOME"]}/.foundry/bin/forge"
+    unless File.exist?(foundry_bin)
+      ohai "Installing Foundry"
+      system "bash", "-c", "curl -L https://foundry.paradigm.xyz | bash"
+      
+      # Add a note about adding Foundry to PATH
+      opoo "Foundry has been installed to ~/.foundry/bin"
+      opoo "You may need to add it to your PATH:"
+      opoo "  echo 'export PATH="$HOME/.foundry/bin:$PATH"' >> ~/.zshrc"
+      opoo "  source ~/.zshrc"
+    end
     ohai "KRNL CLI works best with Foundry installed"
     opoo "To install Foundry, run: curl -L https://foundry.paradigm.xyz | bash"
   end
