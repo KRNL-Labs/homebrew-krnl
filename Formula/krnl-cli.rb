@@ -38,7 +38,7 @@ class KrnlCli < Formula
       # Add a note about adding Foundry to PATH
       opoo "Foundry has been installed to ~/.foundry/bin"
       opoo "You may need to add it to your PATH:"
-      opoo "  echo 'export PATH="$HOME/.foundry/bin:$PATH"' >> ~/.zshrc"
+      opoo "  echo 'export PATH=\"$HOME/.foundry/bin:$PATH\"' >> ~/.zshrc"
       opoo "  source ~/.zshrc"
     end
     ohai "KRNL CLI works best with Foundry installed"
