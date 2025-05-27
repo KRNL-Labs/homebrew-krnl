@@ -1,8 +1,8 @@
 class KrnlCli < Formula
   desc "CLI for deploying and registering smart contracts across multiple networks"
   homepage "https://github.com/KRNL-Labs/krnl-cli"
-  url "https://github.com/KRNL-Labs/homebrew-krnl/releases/download/v1.2.0/krnl-cli-v1.2.0.tar.gz"
-  sha256 "3bab1c6eb67b02704edcdc721e4c9c4488527bad277929370a80dcc48a82c618"
+  url "https://github.com/KRNL-Labs/homebrew-krnl/releases/download/v1.2.1/krnl-cli-v1.2.1.tar.gz"
+  sha256 "e982b9b45977c5dbff081cb47f55de4bde59d95c7c93ed4eeb015ca13b85d62d"
   license "MIT"
   head "https://github.com/KRNL-Labs/krnl-cli.git", branch: "main"
 
